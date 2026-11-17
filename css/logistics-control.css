@@ -600,3 +600,146 @@ button:disabled{opacity:.58;cursor:wait}
 #screen-history .history-incident-form input[type="file"] { width: 100%; min-width: 0; }
 #screen-history .history-incident-form textarea { resize: vertical; }
 #screen-history .history-incident-form button { width: 100%; }
+
+
+/* =====================================================
+   SEMILLA DORADA — CORRECCIÓN RESPONSIVE DEL HISTORIAL
+   Tarjetas, botones, buscador e incidencias
+   ===================================================== */
+
+#screen-container,
+#screen-history,
+#screen-history .card,
+#screen-history #sales-history,
+#screen-history .history-sale-card,
+#screen-history .history-note-row,
+#screen-history .history-note-info,
+#screen-history .row-actions,
+#screen-history .history-detail,
+#screen-history .history-edit-area,
+#screen-history .history-incidents-area {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Buscador */
+#screen-history #history-filter {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor de notas */
+#screen-history #sales-history {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  min-width: 0;
+  gap: 12px;
+}
+
+/* Tarjeta de venta */
+#screen-history .history-sale-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Información de la nota */
+#screen-history .history-note-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 7px;
+  width: 100%;
+}
+
+#screen-history .history-note-info b,
+#screen-history .history-note-info small {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Botones: dos columnas */
+#screen-history .history-sale-card .row-actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Cada botón ocupa únicamente su columna */
+#screen-history .history-sale-card .row-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 52px;
+  margin: 0;
+  padding: 9px 7px;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  text-align: center;
+  line-height: 1.25;
+  font-size: 12px;
+}
+
+/* Detalle e incidencias */
+#screen-history .history-detail,
+#screen-history .history-edit-area,
+#screen-history .history-incidents-area {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+#screen-history .history-incident-form textarea,
+#screen-history .history-incident-form input[type="file"] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+#screen-history .history-incident-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Celulares pequeños */
+@media (max-width: 380px) {
+  #screen-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #screen-history .card,
+  #screen-history .history-sale-card {
+    padding: 10px;
+  }
+
+  #screen-history .history-sale-card .row-actions {
+    gap: 7px;
+  }
+
+  #screen-history .history-sale-card .row-actions button {
+    min-height: 48px;
+    padding: 8px 5px;
+    font-size: 11px;
+  }
+}
